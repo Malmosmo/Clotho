@@ -1,3 +1,4 @@
+from pathlib import Path
 import pickle
 import os
 from flask import Flask
@@ -7,6 +8,8 @@ from flask import jsonify
 
 
 app = Flask(__name__)
+
+BASE_DIR = Path(__file__).resolve().parent
 
 
 @app.route("/")
@@ -33,7 +36,7 @@ def update():
                             "value": value
                         })
 
-            with open("data.pkl", "wb") as file:
+            with open(BASE_DIR / "data.pkl", "wb") as file:
                 pickle.dump({"values": values}, file)
 
             return jsonify({"status": 200})
@@ -44,8 +47,8 @@ def update():
 @app.route("/get")
 def get():
     _dict = {}
-    if os.path.exists("data.pkl"):
-        with open("data.pkl", "rb") as file:
+    if os.path.exists(BASE_DIR / "data.pkl"):
+        with open(BASE_DIR / "data.pkl", "rb") as file:
             _dict = pickle.load(file)
 
     return jsonify(_dict)
