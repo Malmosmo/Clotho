@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html id="page">
+
+<head>
+    <title>Getting Started with Cirrus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+    <link href="https://unpkg.com/cirrus-ui" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+    <!-- Title -->
+    <section class="section">
+        <div class="hero">
+            <div class="hero-body u-items-flex-start">
+                <div class="content">
+                    <div class="u-center">
+                        <h1>I don't care - Jar</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="grid-wrapper">
+        <div class="grid" id="grid" url="{{ url_for('get') }}">
+            <a href="#add-modal" id="addBtn" class="grid-item-add">
+                <h4 class="m-0">+</h4>
+            </a>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal modal-animated--zoom-in" id="add-modal">
+        <a href="javascript:;" class="modal-overlay close-btn" aria-label="Close"></a>
+        <div class="modal-content" role="document">
+            <div class="modal-header">
+                <div class="modal-title">Add Button</div>
+            </div>
+            <div class="modal-body">
+                <div class="input-control">
+                    <input type="text" id="name" placeholder="Name here...">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-section u-text-right">
+                    <a href="#">
+                        <button class="btn btn--sm u-inline-block">Cancel</button>
+                    </a>
+                    <a href="#" id="submit">
+                        <button class="btn-info btn--sm u-inline-block">Add</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</html>
