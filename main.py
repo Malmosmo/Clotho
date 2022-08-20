@@ -49,3 +49,7 @@ def get():
             _dict = pickle.load(file)
 
     return jsonify(_dict)
+
+
+if __name__ == "__main__":
+    app.run()
