@@ -7,10 +7,6 @@ from flask import jsonify
 
 
 app = Flask(__name__)
-app.config.update(
-    TEMPLATES_AUTO_RELOAD=True,
-    TESTING=True,
-)
 
 
 @app.route("/")
